@@ -10,8 +10,12 @@
         <p>Testing</p>
         <div>
             <form action="083/login">
-                <input type="text" name="username">
-                <input type="password" name="password">
+                <label for="user-input"> username:
+                    <input type="text" id="user-input" name="username">
+                </label>
+                <label for="pass-input"> password:
+                    <input type="password" id="pass-input" name="password">
+                </label>
                 <input type="submit" value="login">
             </form>
         </div>
