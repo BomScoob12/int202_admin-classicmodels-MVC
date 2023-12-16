@@ -1,23 +1,31 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: soraw
-  Date: 12/16/2023
-  Time: 11:52 AM
-  To change this template use File | Settings | File Templates.
---%>
-<div>
-    <div class="modal">
-        <p>Testing</p>
-        <div>
-            <form action="083/login">
-                <label for="user-input"> username:
-                    <input type="text" id="user-input" name="username">
-                </label>
-                <label for="pass-input"> password:
-                    <input type="password" id="pass-input" name="password">
-                </label>
-                <input type="submit" value="login">
-            </form>
-        </div>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<div class="bg-overlay"></div>
+
+<div class="modal-container">
+    <div class="modal-content">
+        <form action="083/login" method="post" class="form-container">
+            <div class="form-header">Login account</div>
+
+            <div class="error-msg-container" id="error-msg" name="error-msg">
+                <c:choose>
+                    <c:when test="${requestScope.loginError == null}">
+                        No error
+                    </c:when>
+                    <c:otherwise>
+                        ${requestScope.loginError}
+                    </c:otherwise>
+                </c:choose>
+            </div>
+
+            <div>
+                <input type="text" name="username" id="username" autocomplete="username" class="form-input" placeholder="Enter your username">
+                <input type="password" name="password" id="password" class="form-input" placeholder="Enter your password">
+            </div>
+
+            <div class="flex mt-3">
+                <button type="submit" class="form-button primary-button">Login</button>
+            </div>
+        </form>
     </div>
 </div>
