@@ -13,10 +13,10 @@ public class TestArgon2 {
         Employee emp = employeeRepository.findByEmail(email);
         System.out.println(emp.getEmail());
         char [] pass1 = "1002".toCharArray();
-        char [] pass2;
-        boolean isValid1 = argon2.verify(emp.getEmail(), pass1);
-//        boolean isValid2 = argon2.verify(emp.getEmail(), pass2);
+        char [] pass2 = "1111".toCharArray();
+        boolean isValid1 = argon2.verify(emp.getPassword(), pass1);
+        boolean isValid2 = argon2.verify(emp.getEmail(), pass2);
         System.out.println(isValid1);
-//        System.out.println(isValid2);
+        System.out.println(isValid2);
     }
 }

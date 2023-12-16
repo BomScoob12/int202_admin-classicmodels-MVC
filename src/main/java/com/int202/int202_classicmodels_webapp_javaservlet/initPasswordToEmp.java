@@ -13,6 +13,7 @@ public class initPasswordToEmp {
         char [] password;
         for (Employee e : employeeRepository.findAll()){
             password = e.getId().toString().toCharArray();
+            System.out.println(password);
             e.setPassword(argon2.hash(2,16,1,password));
             System.out.println(e.getPassword());
         }
