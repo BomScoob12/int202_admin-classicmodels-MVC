@@ -4,7 +4,7 @@
 
 <div class="modal-container">
     <div class="modal-content">
-        <form action="083/login" method="post" class="form-container">
+        <form action="login" method="post" class="form-container">
             <div class="form-header">Login account</div>
 
             <div class="error-msg-container" id="error-msg" name="error-msg">

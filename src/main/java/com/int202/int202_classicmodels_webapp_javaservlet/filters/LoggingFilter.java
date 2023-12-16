@@ -27,7 +27,7 @@ public class LoggingFilter implements Filter {
             System.out.println("Error! invalid input");
             HttpServletRequest httpRequest = (HttpServletRequest) servletRequest;
             httpRequest.setAttribute("loginError", "Invalid username or password");
-            httpRequest.getRequestDispatcher("/loginModal.jsp").forward(servletRequest, servletResponse);
+            httpRequest.getRequestDispatcher("index.jsp").forward(servletRequest, servletResponse);
         }
         //after invoke resources
         long duration = System.currentTimeMillis() - before;
@@ -52,6 +52,5 @@ public class LoggingFilter implements Filter {
     }
     @Override
     public void destroy() {
-        Filter.super.destroy();
     }
 }
