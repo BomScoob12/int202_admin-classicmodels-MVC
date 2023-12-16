@@ -13,10 +13,11 @@ import lombok.ToString;
 @Entity
 @Table(name = "employees")
 @NamedQueries({
-        @NamedQuery(name = "FIND_ALL", query = "SELECT emp FROM Employee emp")
+        @NamedQuery(name = "EMP.FIND_ALL", query = "SELECT emp FROM Employee emp")
 })
 public class Employee {
     @Id
+    @Column(name = "employeeNumber", nullable = false)
     private int id;
     @Column(name = "lastName")
     private String lastname;
@@ -25,6 +26,6 @@ public class Employee {
     private String extension;
     private String email;
     private String officeCode;
-    private int reportsTo;
+    private Integer reportsTo;
     private String jobTitle;
 }
